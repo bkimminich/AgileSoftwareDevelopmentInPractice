@@ -5,8 +5,8 @@ public abstract class Hand implements Comparable<Hand> {
 	abstract HandCategory getHandCategory();
 
 	@Override
-	public int compareTo(Hand o) {
-		return getHandCategory().compareTo(o.getHandCategory());
+	public int compareTo(Hand other) {
+		return getHandCategory().compareTo(other.getHandCategory());
 	}
 
 }

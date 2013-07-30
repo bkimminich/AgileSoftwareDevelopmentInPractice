@@ -8,6 +8,6 @@ public enum HandCategory {
 	ThreeOfAKind,
 	Straight,
 	FullHouse,
-	FourOfAKind,
+	FourOfAKind
 
 }
