@@ -1,4 +1,4 @@
-package de.kimminich.agile.lecture3.bad;
+package de.kimminich.agile.lecture3.function.bad;
 
 import java.util.ArrayList;
 import java.util.HashSet;

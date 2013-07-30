@@ -1,4 +1,4 @@
-package de.kimminich.agile.lecture3.clean;
+package de.kimminich.agile.lecture3.function.clean;
 
 import java.util.Queue;
 import java.util.Random;
