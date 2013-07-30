@@ -1,4 +1,4 @@
-package de.kimminich.agile.lecture25;
+package de.kimminich.agile.lecture5;
 
 import org.junit.After;
 import org.junit.AfterClass;

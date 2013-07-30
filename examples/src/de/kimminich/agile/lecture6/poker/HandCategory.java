@@ -1,4 +1,4 @@
-package de.kimminich.agile.lecture26.poker;
+package de.kimminich.agile.lecture6.poker;
 
 public enum HandCategory {
 

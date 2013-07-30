@@ -1,4 +1,4 @@
-package de.kimminich.agile.lecture26.bowling;
+package de.kimminich.agile.lecture6.bowling;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;

@@ -1,4 +1,4 @@
-package de.kimminich.agile.lecture22.scoperule;
+package de.kimminich.agile.lecture2.scoperule;
 
 import java.util.ArrayList;
 import java.util.List;

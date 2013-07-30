@@ -1,4 +1,4 @@
-package de.kimminich.agile.lecture27.mockito;
+package de.kimminich.agile.lecture7.mockito;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.allOf;

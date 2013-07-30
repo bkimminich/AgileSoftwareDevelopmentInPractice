@@ -1,4 +1,4 @@
-package de.kimminich.agile.lecture22;
+package de.kimminich.agile.lecture2;
 
 public class MeaningfulNames {
 

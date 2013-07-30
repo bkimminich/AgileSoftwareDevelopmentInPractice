@@ -1,4 +1,4 @@
-package de.kimminich.agile.lecture25;
+package de.kimminich.agile.lecture5;
 
 public class Calculator {
 
