@@ -1,13 +1,13 @@
-package de.kimminich.agile.lecture7.bdd;
+package de.kimminich.agile.lecture7.builder;
 
 
+import static de.kimminich.agile.lecture7.builder.StoreBuilder.aStore;
 import static org.junit.Assert.assertEquals;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import org.junit.Test;
 
+import de.kimminich.agile.lecture7.bdd.Order;
+import de.kimminich.agile.lecture7.bdd.Store;
 
 public class ReturnsGoToStockTest {
     
@@ -15,9 +15,7 @@ public class ReturnsGoToStockTest {
     public void shouldReturnRefundedItemToStock() {
         // given
         Order order = new Order("Black Sweater");
-        Map<String, Integer> stock = new HashMap<>();
-        stock.put("Black Sweater", 3);
-        Store store = new Store("Manfred", stock);
+        Store store = aStore().withItems("Black Sweater", "Black Sweater", "Black Sweater").build();
         // when
         store.receiveReturnFrom(order);
         // then

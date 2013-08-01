@@ -1,14 +1,16 @@
-package de.kimminich.agile.lecture7.bdd;
+package de.kimminich.agile.lecture7.builder;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import de.kimminich.agile.lecture7.bdd.Store;
+
 public class StoreBuilder {
 
+    private String manager = "Manny";
     private Map<String, Integer> stock = new HashMap<>();
 
     private StoreBuilder() {
-        // prevent instantiation via new StoreBuilder()
     }
 
     public static StoreBuilder aStore() {
@@ -16,9 +18,21 @@ public class StoreBuilder {
     }
 
     public Store build() {
-        Store store = new Store();
-        store.setStock(stock);
+        Store store = new Store(manager, stock);
         return store;
+    }
+
+    private void addToStock(String item) {
+        if (!stock.containsKey(item)) {
+            stock.put(item, 1);
+        } else {
+            stock.put(item, stock.get(item) + 1);
+        }
+    }
+
+    public StoreBuilder withManager(String manager) {
+        this.manager = manager;
+        return this;
     }
 
     public StoreBuilder withItem(String item) {
@@ -33,11 +47,4 @@ public class StoreBuilder {
         return this;
     }
 
-    private void addToStock(String item) {
-        if (!stock.containsKey(item)) {
-            stock.put(item, 1);
-        } else {
-            stock.put(item, stock.get(item) + 1);
-        }
-    }
 }
