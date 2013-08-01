@@ -7,6 +7,8 @@ import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import com.sun.org.apache.xpath.internal.operations.Div;
+
 public class JUnit4AnnotationsDemo {
 
 	@BeforeClass
@@ -39,10 +41,11 @@ public class JUnit4AnnotationsDemo {
 		System.out.println("This is a test that is expected to pass normally");
 	}
 
-	@Test(expected = Exception.class)
+	@Test(expected = ArithmeticException.class)
 	public void testException() {
 		System.out.println("This test is expected to pass if an Exception occurs");
 		int i = 0 / 0;
+		System.out.println("If you see this log, something is wrong with mathematics: " + i);
 	}
 
 	@Test(timeout = 1000)

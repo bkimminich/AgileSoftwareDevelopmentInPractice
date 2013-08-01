@@ -17,9 +17,8 @@ public class JUnit4AssertionsDemo {
 	@Test
 	public void testBooleanAssertions() {
 		assertTrue(true); // Pass
-		assertFalse(1 == 1); // Fail
-		assertFalse(false); // Would pass but isn't executed due to previous
-							// failure of assertFalse(1 == 1)
+		assertTrue("Abc".matches("[a-z]*")); // Fail
+		assertFalse(false); // Would pass but isn't executed due to preceding fail
 	}
 
 	@Test
