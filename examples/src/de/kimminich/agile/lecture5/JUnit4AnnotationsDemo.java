@@ -7,8 +7,6 @@ import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import com.sun.org.apache.xpath.internal.operations.Div;
-
 public class JUnit4AnnotationsDemo {
 
 	@BeforeClass
