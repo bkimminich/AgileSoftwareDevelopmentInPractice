@@ -30,7 +30,7 @@ public class CollectionMatcherDemoTest {
 	@Test
 	public void shouldFindNeedleInHaystack() {
 		// when
-		List<String> haystack = Arrays.asList("straw", "straw", "straw", "straw");
+		List<String> haystack = Arrays.asList("straw", "straw", "straw", "needle");
 		// then
 		assertThat(haystack, hasItem("needle"));
 
