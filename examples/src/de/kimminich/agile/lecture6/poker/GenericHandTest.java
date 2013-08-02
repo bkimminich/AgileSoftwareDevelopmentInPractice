@@ -1,4 +1,4 @@
-package de.kimminich.agile.excercise6.poker;
+package de.kimminich.agile.lecture6.poker;
 
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.is;
@@ -11,8 +11,6 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import de.kimminich.agile.lecture6.poker.Hand;
-import de.kimminich.agile.lecture6.poker.HandCategory;
 
 @Ignore
 public class GenericHandTest {
