@@ -1,5 +1,6 @@
 package de.kimminich.agile.lecture6.poker;
 
+
 public abstract class Hand implements Comparable<Hand> {
 	
 	protected int[] cards;
@@ -8,11 +9,11 @@ public abstract class Hand implements Comparable<Hand> {
 		this.cards = cards;
 	}
 
-	abstract HandCategory getHandCategory();
+	public abstract HandCategory getHandCategory();
 
 	@Override
 	public int compareTo(Hand other) {
 		return getHandCategory().compareTo(other.getHandCategory());
 	}
-
+	
 }
