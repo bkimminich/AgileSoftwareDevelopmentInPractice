@@ -1,27 +1,24 @@
 package de.kimminich.agile.lecture6.poker;
 
+import org.hamcrest.Description;
+import org.hamcrest.Matcher;
+import org.hamcrest.TypeSafeMatcher;
+import org.junit.Test;
+
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
-import org.hamcrest.Description;
-import org.hamcrest.Matcher;
-import org.hamcrest.TypeSafeMatcher;
-import org.junit.Ignore;
-import org.junit.Test;
-import org.mockito.Mockito;
 
-
-@Ignore
 public class GenericHandTest {
 
     private static Hand aHandWithCards(int... cards) {
-        return Mockito.mock(Hand.class); // TODO Replace with constructor call of your own implementation and remove @Ignore
+        return new HandImpl(cards);
     }
 
     @Test
     public void shouldDetermineHighCardCombo() {
-        assertThat(aHandWithCards(2, 3, 4, 5, 6), hasCategory(HandCategory.HighCard));
+        assertThat(aHandWithCards(2, 3, 4, 5, 7), hasCategory(HandCategory.HighCard));
     }
 
     @Test
@@ -81,7 +78,7 @@ public class GenericHandTest {
 
     @Test
     public void shouldOnePairWinOverHighCard() {
-        assertThat(aHandWithCards(2, 2, 4, 5, 6), is(greaterThan(aHandWithCards(6, 7, 8, 9, 10))));
+        assertThat(aHandWithCards(2, 2, 4, 5, 6), is(greaterThan(aHandWithCards(5, 7, 8, 9, 10))));
     }
 
     @Test
