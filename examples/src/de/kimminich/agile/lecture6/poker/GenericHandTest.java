@@ -1,22 +1,19 @@
 package de.kimminich.agile.lecture6.poker;
 
+import org.hamcrest.Description;
+import org.hamcrest.Matcher;
+import org.hamcrest.TypeSafeMatcher;
+import org.junit.Test;
+
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
-import org.hamcrest.Description;
-import org.hamcrest.Matcher;
-import org.hamcrest.TypeSafeMatcher;
-import org.junit.Ignore;
-import org.junit.Test;
-import org.mockito.Mockito;
 
-
-@Ignore
 public class GenericHandTest {
 
     private static Hand aHandWithCards(int... cards) {
-        return Mockito.mock(Hand.class); // TODO Replace with constructor call of your own implementation and remove @Ignore
+        return new HandImpl(cards);
     }
 
     @Test
