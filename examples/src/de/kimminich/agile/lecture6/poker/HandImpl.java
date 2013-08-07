@@ -13,13 +13,31 @@ public class HandImpl extends Hand {
     public HandImpl(int... cards) {
         this.cards = cards;
 
-        // aHandWithCards(1, 5, 5, 5, 5);
+        checkCardsRange();
 
         Map<Integer, Integer> groups = getMapOfCardGroups();
+
+        checkImpossibleNumberOfSameCardValue(groups);
+
         for (Integer card : groups.keySet()) {
             if (card <= 1 || card >= 15) {
                 throw new RuntimeException();
             }
+        }
+    }
+
+    private void checkImpossibleNumberOfSameCardValue(Map<Integer, Integer> groups) {
+        if (groups.values().contains(5)) {
+            throw new RuntimeException("Impossible number of same card value.");
+        }
+    }
+
+    private void checkCardsRange() {
+        if (cards.length > 5) {
+            throw new RuntimeException("Too many cards.");
+        }
+        if (cards.length < 5) {
+            throw new RuntimeException("Too little cards.");
         }
     }
 

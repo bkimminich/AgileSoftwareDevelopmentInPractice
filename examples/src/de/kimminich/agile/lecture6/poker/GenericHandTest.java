@@ -18,7 +18,7 @@ public class GenericHandTest {
 
     @Test
     public void shouldDetermineHighCardCombo() {
-        assertThat(aHandWithCards(2, 3, 4, 5, 6), hasCategory(HandCategory.HighCard));
+        assertThat(aHandWithCards(2, 3, 4, 5, 7), hasCategory(HandCategory.HighCard));
     }
 
     @Test
@@ -78,7 +78,7 @@ public class GenericHandTest {
 
     @Test
     public void shouldOnePairWinOverHighCard() {
-        assertThat(aHandWithCards(2, 2, 4, 5, 6), is(greaterThan(aHandWithCards(6, 7, 8, 9, 10))));
+        assertThat(aHandWithCards(2, 2, 4, 5, 6), is(greaterThan(aHandWithCards(5, 7, 8, 9, 10))));
     }
 
     @Test
