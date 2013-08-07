@@ -17,7 +17,7 @@ public class HandSampleImpl extends Hand {
 		this.cards = cards;
 
 		checkCardsRange();
-		Map<Integer, Integer> groups = getMapOfCardGroups();
+		CardGroups groups = getMapOfCardGroups();
 		checkImpossibleNumberOfSameCardValue(groups);
 
 		for (Integer card : groups.keySet()) {
@@ -85,7 +85,7 @@ public class HandSampleImpl extends Hand {
 	}
 
 	private boolean checkIfFourOfAKind() {
-		Map<Integer, Integer> groupsOfCars = getMapOfCardGroups();
+		CardGroups groupsOfCars = getMapOfCardGroups();
 		for (Entry<Integer, Integer> group : groupsOfCars.entrySet()) {
 			if (group.getValue() == 4) {
 				return true;
@@ -95,7 +95,7 @@ public class HandSampleImpl extends Hand {
 	}
 
 	private boolean checkIfThreeOfAKind() {
-		Map<Integer, Integer> groupsOfCars = getMapOfCardGroups();
+		CardGroups groupsOfCars = getMapOfCardGroups();
 		for (Entry<Integer, Integer> group : groupsOfCars.entrySet()) {
 			if (group.getValue() == 3) {
 				return true;
@@ -105,7 +105,7 @@ public class HandSampleImpl extends Hand {
 	}
 
 	private boolean checkIfOnePair() {
-		Map<Integer, Integer> groupsOfCars = getMapOfCardGroups();
+		CardGroups groupsOfCars = getMapOfCardGroups();
 		for (Entry<Integer, Integer> group : groupsOfCars.entrySet()) {
 			if (group.getValue() == 2) {
 				return true;
@@ -115,7 +115,7 @@ public class HandSampleImpl extends Hand {
 	}
 
 	private boolean checkIfTwoPair() {
-		Map<Integer, Integer> groupsOfCars = getMapOfCardGroups();
+		CardGroups groupsOfCars = getMapOfCardGroups();
 		Boolean onePair = null;
 		for (Entry<Integer, Integer> group : groupsOfCars.entrySet()) {
 			if (onePair == null) {
@@ -132,13 +132,13 @@ public class HandSampleImpl extends Hand {
 	}
 
 	private boolean checkIfFullHouse() {
-		Map<Integer, Integer> groupsOfCars = getMapOfCardGroups();
+		CardGroups groupsOfCars = getMapOfCardGroups();
 		Collection<Integer> values = groupsOfCars.values();
 		return values.contains(2) && values.contains(3);
 	}
 
-	private Map<Integer, Integer> getMapOfCardGroups() {
-		Map<Integer, Integer> groupsOfCars = new HashMap<>();
+	private CardGroups getMapOfCardGroups() {
+		CardGroups groupsOfCars = new CardGroups();
 		for (int card : cards) {
 			if (groupsOfCars.get(card) == null) {
 				groupsOfCars.put(card, 1);
@@ -147,6 +147,10 @@ public class HandSampleImpl extends Hand {
 			}
 		}
 		return groupsOfCars;
+	}
+
+	private class CardGroups extends HashMap<Integer, Integer> {
+
 	}
 
 }
