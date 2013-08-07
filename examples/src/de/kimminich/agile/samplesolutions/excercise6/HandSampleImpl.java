@@ -68,11 +68,15 @@ public class HandSampleImpl extends Hand {
 	private boolean checkIfStraight() {
 		Arrays.sort(cards);
 		for (int i = 1; i < cards.length; i++) {
-			if (cards[i] - cards[i - 1] != 1) {
+			if (!isCardSuccessorOfPreviousCard(i)) {
 				return false;
 			}
 		}
 		return true;
+	}
+
+	private boolean isCardSuccessorOfPreviousCard(int i) {
+		return cards[i] - cards[i - 1] == 1;
 	}
 
 	@Override
