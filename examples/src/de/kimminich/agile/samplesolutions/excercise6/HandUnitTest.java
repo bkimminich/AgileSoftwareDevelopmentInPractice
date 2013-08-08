@@ -7,6 +7,7 @@ import static org.junit.Assert.assertThat;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import de.kimminich.agile.excercises.excercise6.Hand;
@@ -53,6 +54,12 @@ public class HandUnitTest {
 	public void shouldDetermineStraight() {
         assertThat(aHandWithCards(5, 6, 7, 8, 9), hasCategory(HandCategory.Straight));
     }
+
+	@Test
+	@Ignore
+	public void shouldDetermineStraightStartingWithAce() {
+		assertThat(aHandWithCards(14, 2, 3, 4, 5), hasCategory(HandCategory.Straight));
+	}
 
     @Test(expected = Exception.class)
     public void shouldFailOnImpossibleNumberOfSameCardValue() {
