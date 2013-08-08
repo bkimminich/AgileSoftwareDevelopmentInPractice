@@ -21,8 +21,8 @@ public class HandSampleImpl extends Hand {
 		checkImpossibleNumberOfSameCardValue(groups);
 
 		for (Integer card : groups.keySet()) {
-			if (card <= 1 || card >= 15) {
-				throw new IllegalArgumentException();
+			if (card < 2 || card > 14) {
+				throw new IllegalArgumentException("Illegal card value: " + card);
 			}
 		}
 	}
