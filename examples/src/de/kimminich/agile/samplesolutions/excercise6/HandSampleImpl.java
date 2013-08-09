@@ -1,9 +1,7 @@
 package de.kimminich.agile.samplesolutions.excercise6;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Map.Entry;
 
 import de.kimminich.agile.excercises.excercise6.Hand;
@@ -12,23 +10,24 @@ import de.kimminich.agile.excercises.excercise6.HandCategory;
 public class HandSampleImpl extends Hand {
 
 	protected int[] cards;
+	CardValueTuples cardValueTuples;
 
 	public HandSampleImpl(int... cards) {
 		this.cards = cards;
 
 		checkCardsRange();
-		CardGroups groups = getMapOfCardGroups();
-		checkImpossibleNumberOfSameCardValue(groups);
+		cardValueTuples = determineOccurencesOfCardValues();
+		checkImpossibleNumberOfSameCardValue(cardValueTuples);
 
-		for (Integer card : groups.keySet()) {
+		for (Integer card : cardValueTuples.keySet()) {
 			if (card < 2 || card > 14) {
 				throw new IllegalArgumentException("Illegal card value: " + card);
 			}
 		}
 	}
 
-	private void checkImpossibleNumberOfSameCardValue(Map<Integer, Integer> groups) {
-		if (groups.values().contains(5)) {
+	private void checkImpossibleNumberOfSameCardValue(CardValueTuples occurences) {
+		if (occurences.values().contains(5)) {
 			throw new IllegalArgumentException("Impossible number of same card value.");
 		}
 	}
@@ -65,6 +64,52 @@ public class HandSampleImpl extends Hand {
 		return HandCategory.HighCard;
 	}
 
+	@Override
+	public int compareTo(Hand other) {
+		return getHandCategory().compareTo(other.getHandCategory());
+	}
+
+	private boolean checkIfFullHouse() {
+		return checkIfThreeOfAKind() && checkIfOnePair();
+	}
+
+	private boolean checkIfThreeOfAKind() {
+		return hasCardValueTupleInGivenCards(3);
+	}
+
+	private boolean checkIfOnePair() {
+		return hasCardValueTupleInGivenCards(2);
+	}
+
+	private boolean checkIfFourOfAKind() {
+		return hasCardValueTupleInGivenCards(4);
+	}
+
+	private boolean checkIfTwoPair() {
+		Boolean onePair = null;
+		for (Entry<Integer, Integer> group : cardValueTuples.entrySet()) {
+			if (onePair == null) {
+				if (group.getValue() == 2) {
+					onePair = true;
+					continue;
+				}
+			}
+			if (group.getValue() == 2) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private boolean hasCardValueTupleInGivenCards(int tupleSize) {
+		for (Entry<Integer, Integer> group : cardValueTuples.entrySet()) {
+			if (group.getValue() == tupleSize) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	private boolean checkIfStraight() {
 		Arrays.sort(cards);
 		for (int i = 1; i < cards.length; i++) {
@@ -79,77 +124,19 @@ public class HandSampleImpl extends Hand {
 		return cards[i] - cards[i - 1] == 1;
 	}
 
-	@Override
-	public int compareTo(Hand other) {
-		return getHandCategory().compareTo(other.getHandCategory());
-	}
-
-	private boolean checkIfFourOfAKind() {
-		CardGroups groupsOfCars = getMapOfCardGroups();
-		for (Entry<Integer, Integer> group : groupsOfCars.entrySet()) {
-			if (group.getValue() == 4) {
-				return true;
-			}
-		}
-		return false;
-	}
-
-	private boolean checkIfThreeOfAKind() {
-		CardGroups groupsOfCars = getMapOfCardGroups();
-		for (Entry<Integer, Integer> group : groupsOfCars.entrySet()) {
-			if (group.getValue() == 3) {
-				return true;
-			}
-		}
-		return false;
-	}
-
-	private boolean checkIfOnePair() {
-		CardGroups groupsOfCars = getMapOfCardGroups();
-		for (Entry<Integer, Integer> group : groupsOfCars.entrySet()) {
-			if (group.getValue() == 2) {
-				return true;
-			}
-		}
-		return false;
-	}
-
-	private boolean checkIfTwoPair() {
-		CardGroups groupsOfCars = getMapOfCardGroups();
-		Boolean onePair = null;
-		for (Entry<Integer, Integer> group : groupsOfCars.entrySet()) {
-			if (onePair == null) {
-				if (group.getValue() == 2) {
-					onePair = true;
-					continue;
-				}
-			}
-			if (group.getValue() == 2) {
-				return true;
-			}
-		}
-		return false;
-	}
-
-	private boolean checkIfFullHouse() {
-		CardGroups groupsOfCars = getMapOfCardGroups();
-		Collection<Integer> values = groupsOfCars.values();
-		return values.contains(2) && values.contains(3);
-	}
-
-	private CardGroups getMapOfCardGroups() {
-		CardGroups groupsOfCars = new CardGroups();
+	private CardValueTuples determineOccurencesOfCardValues() {
+		CardValueTuples tuples = new CardValueTuples();
 		for (int card : cards) {
-			if (groupsOfCars.get(card) == null) {
-				groupsOfCars.put(card, 1);
+			if (tuples.get(card) == null) {
+				tuples.put(card, 1);
 			} else {
-				groupsOfCars.put(card, groupsOfCars.get(card) + 1);
+				tuples.put(card, tuples.get(card) + 1);
 			}
 		}
-		return groupsOfCars;
+		return tuples;
 	}
 
-	private class CardGroups extends HashMap<Integer, Integer> {
+	private class CardValueTuples extends HashMap<Integer, Integer> {
 
 	}
 
