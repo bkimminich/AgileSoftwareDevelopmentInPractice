@@ -114,7 +114,7 @@ public class HandSampleImpl extends Hand {
 		Arrays.sort(cards);
 		for (int i = 1; i < cards.length; i++) {
 			if (!isCardSuccessorOfPreviousCard(i)) {
-				return false;
+				return (i == 4 ? isLastCardAceWithFiveAsPredecessor() : false);
 			}
 		}
 		return true;
@@ -122,6 +122,10 @@ public class HandSampleImpl extends Hand {
 
 	private boolean isCardSuccessorOfPreviousCard(int i) {
 		return cards[i] - cards[i - 1] == 1;
+	}
+
+	private boolean isLastCardAceWithFiveAsPredecessor() {
+		return cards[4] == 14 && cards[3] == 5;
 	}
 
 	private CardValueTuples determineOccurencesOfCardValues() {
