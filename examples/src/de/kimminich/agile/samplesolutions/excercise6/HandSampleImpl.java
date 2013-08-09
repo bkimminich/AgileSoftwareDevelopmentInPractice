@@ -85,6 +85,15 @@ public class HandSampleImpl extends Hand {
 		return hasCardValueTupleInGivenCards(4);
 	}
 
+	private boolean hasCardValueTupleInGivenCards(int tupleSize) {
+		for (Entry<Integer, Integer> group : cardValueTuples.entrySet()) {
+			if (group.getValue() == tupleSize) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	private boolean checkIfTwoPair() {
 		Boolean onePair = null;
 		for (Entry<Integer, Integer> group : cardValueTuples.entrySet()) {
@@ -95,15 +104,6 @@ public class HandSampleImpl extends Hand {
 				}
 			}
 			if (group.getValue() == 2) {
-				return true;
-			}
-		}
-		return false;
-	}
-
-	private boolean hasCardValueTupleInGivenCards(int tupleSize) {
-		for (Entry<Integer, Integer> group : cardValueTuples.entrySet()) {
-			if (group.getValue() == tupleSize) {
 				return true;
 			}
 		}
