@@ -5,4 +5,4 @@ lectures available on Slideshare: http://www.slideshare.net/BjrnKimminich/agile-
 
 ## Installation
 
-Simply checkout the whole project and import into Eclipse. Done.
+Simply checkout the whole project and import into Eclipse. Done! ;)
