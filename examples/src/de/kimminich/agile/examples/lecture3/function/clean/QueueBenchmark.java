@@ -23,7 +23,6 @@ public class QueueBenchmark {
     int numberOfOperations;
 
     public QueueBenchmark(Queue<String> queue, int valueLength, int numberOfOperations) {
-        super();
         this.queue = queue;
         this.valueLength = valueLength;
         this.numberOfOperations = numberOfOperations;
