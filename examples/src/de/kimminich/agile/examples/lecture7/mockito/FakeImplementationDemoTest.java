@@ -33,9 +33,8 @@ public class FakeImplementationDemoTest {
 
 	@Test
 	public void shouldFindPermanentlyAbsentStudentInGroup() {
-		// assume
-		String[] studentGroupA = { "Amber Miller", "Terry Stone", "John Doe", "Jimmy Morgan" };
 		// given
+		String[] studentGroupA = { "Amber Miller", "Terry Stone", "John Doe", "Jimmy Morgan" };
 		given(studentSearchService.findStudentsInGroup("A")).willReturn(studentGroupA);
 		// when
 		List<String> absentStudents = absenceDeterminator.findAbsentStudents("A");
