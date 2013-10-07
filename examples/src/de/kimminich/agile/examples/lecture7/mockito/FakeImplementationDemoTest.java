@@ -39,7 +39,8 @@ public class FakeImplementationDemoTest {
 		// when
 		List<String> absentStudents = absenceDeterminator.findAbsentStudents("A");
 		// then
-		assertThat(absentStudents, allOf(hasSize(1), contains("John Doe")));
+		assertThat(absentStudents, hasSize(1));
+        assertThat(absentStudents, contains("John Doe"));
 
 		verify(studentSearchService).findStudentsInGroup("A");
 		verify(studentSearchService, never()).findStudentsInGroup("B");
