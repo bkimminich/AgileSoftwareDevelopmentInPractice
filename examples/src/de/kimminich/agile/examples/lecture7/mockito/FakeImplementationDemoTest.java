@@ -11,6 +11,7 @@ import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.contains;
+import static org.hamcrest.Matchers.hasItem;
 import static org.hamcrest.Matchers.hasSize;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.*;
@@ -37,7 +38,7 @@ public class FakeImplementationDemoTest {
         List<String> absentStudents = absenceDeterminator.findAbsentStudents("A");
         // then
         assertThat(absentStudents, hasSize(1));
-        assertThat(absentStudents, contains("John Doe"));
+        assertThat(absentStudents, hasItem("John Doe"));
 
         verify(studentSearchService).findStudentsInGroup("A");
         verify(studentSearchService, never()).findStudentsInGroup("B");
