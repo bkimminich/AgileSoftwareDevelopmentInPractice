@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Order {
-    
+
     private List<String> items;
 
     public Order(String... items) {
@@ -14,5 +14,5 @@ public class Order {
     public List<String> getItems() {
         return items;
     }
-    
+
 }

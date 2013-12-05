@@ -1,9 +1,9 @@
 package de.kimminich.agile.examples.lecture7.builder;
 
+import de.kimminich.agile.examples.lecture7.bdd.Store;
+
 import java.util.HashMap;
 import java.util.Map;
-
-import de.kimminich.agile.examples.lecture7.bdd.Store;
 
 public class StoreBuilder {
 

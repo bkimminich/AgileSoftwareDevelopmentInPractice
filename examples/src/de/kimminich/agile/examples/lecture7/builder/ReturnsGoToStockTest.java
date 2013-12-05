@@ -1,16 +1,15 @@
 package de.kimminich.agile.examples.lecture7.builder;
 
 
+import de.kimminich.agile.examples.lecture7.bdd.Order;
+import de.kimminich.agile.examples.lecture7.bdd.Store;
+import org.junit.Test;
+
 import static de.kimminich.agile.examples.lecture7.builder.StoreBuilder.aStore;
 import static org.junit.Assert.assertEquals;
 
-import org.junit.Test;
-
-import de.kimminich.agile.examples.lecture7.bdd.Order;
-import de.kimminich.agile.examples.lecture7.bdd.Store;
-
 public class ReturnsGoToStockTest {
-    
+
     @Test
     public void shouldReturnRefundedItemToStock() {
         // given
@@ -21,5 +20,5 @@ public class ReturnsGoToStockTest {
         // then
         assertEquals(4, store.getStockCountFor("Black Sweater"));
     }
-    
+
 }

@@ -1,12 +1,12 @@
 package de.kimminich.agile.examples.lecture6.singleassert;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
-
 import org.junit.Test;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 public class SingleAssertRuleTest {
-    
+
     @Test
     public void testPatternMatches1() {
         String pattern = "[a-z]*[0-9]?";

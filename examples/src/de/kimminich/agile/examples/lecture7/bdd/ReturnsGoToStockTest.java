@@ -1,16 +1,16 @@
 package de.kimminich.agile.examples.lecture7.bdd;
 
 
-import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 
 public class ReturnsGoToStockTest {
-    
+
     @Test
     public void shouldReturnRefundedItemToStock() {
         // given
@@ -23,5 +23,5 @@ public class ReturnsGoToStockTest {
         // then
         assertEquals(4, store.getStockCountFor("Black Sweater"));
     }
-    
+
 }

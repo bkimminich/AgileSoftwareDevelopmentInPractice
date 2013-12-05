@@ -8,7 +8,7 @@ public class Store {
 
     private String manager;
     private Map<String, Integer> stock = new HashMap<>();
-    
+
     public Store(String manager, Map<String, Integer> stock) {
         this.manager = manager;
         this.stock = stock;

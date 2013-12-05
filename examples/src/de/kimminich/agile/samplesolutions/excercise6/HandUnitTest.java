@@ -1,16 +1,15 @@
 package de.kimminich.agile.samplesolutions.excercise6;
 
-import static org.hamcrest.Matchers.greaterThan;
-import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertThat;
-
+import de.kimminich.agile.excercises.excercise6.Hand;
+import de.kimminich.agile.excercises.excercise6.HandCategory;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
 import org.junit.Test;
 
-import de.kimminich.agile.excercises.excercise6.Hand;
-import de.kimminich.agile.excercises.excercise6.HandCategory;
+import static org.hamcrest.Matchers.greaterThan;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
 
 
 public class HandUnitTest {
@@ -20,49 +19,49 @@ public class HandUnitTest {
     }
 
     @Test
-	public void shouldDetermineHighCard() {
+    public void shouldDetermineHighCard() {
         assertThat(aHandWithCards(2, 3, 4, 5, 7), hasCategory(HandCategory.HighCard));
     }
 
     @Test
-	public void shouldDetermineOnePair() {
+    public void shouldDetermineOnePair() {
         assertThat(aHandWithCards(2, 2, 3, 4, 5), hasCategory(HandCategory.OnePair));
     }
 
     @Test
-	public void shouldDetermineThreeOfAKind() {
+    public void shouldDetermineThreeOfAKind() {
         assertThat(aHandWithCards(2, 2, 2, 3, 4), hasCategory(HandCategory.ThreeOfAKind));
     }
 
     @Test
-	public void shouldDetermineFourOfAKind() {
+    public void shouldDetermineFourOfAKind() {
         assertThat(aHandWithCards(2, 3, 3, 3, 3), hasCategory(HandCategory.FourOfAKind));
     }
 
     @Test
-	public void shouldDetermineFullHouse() {
+    public void shouldDetermineFullHouse() {
         assertThat(aHandWithCards(2, 3, 3, 2, 3), hasCategory(HandCategory.FullHouse));
     }
 
     @Test
-	public void shouldDetermineTwoPair() {
+    public void shouldDetermineTwoPair() {
         assertThat(aHandWithCards(2, 2, 3, 3, 4), hasCategory(HandCategory.TwoPair));
     }
 
     @Test
-	public void shouldDetermineStraight() {
+    public void shouldDetermineStraight() {
         assertThat(aHandWithCards(5, 6, 7, 8, 9), hasCategory(HandCategory.Straight));
     }
 
-	@Test
-	public void shouldDetermineStraightEndingWithAce() {
-		assertThat(aHandWithCards(10, 11, 12, 13, 14), hasCategory(HandCategory.Straight));
-	}
+    @Test
+    public void shouldDetermineStraightEndingWithAce() {
+        assertThat(aHandWithCards(10, 11, 12, 13, 14), hasCategory(HandCategory.Straight));
+    }
 
-	@Test
-	public void shouldDetermineStraightStartingWithAce() {
-		assertThat(aHandWithCards(14, 2, 3, 4, 5), hasCategory(HandCategory.Straight));
-	}
+    @Test
+    public void shouldDetermineStraightStartingWithAce() {
+        assertThat(aHandWithCards(14, 2, 3, 4, 5), hasCategory(HandCategory.Straight));
+    }
 
     @Test(expected = Exception.class)
     public void shouldFailOnImpossibleNumberOfSameCardValue() {
