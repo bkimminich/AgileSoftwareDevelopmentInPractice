@@ -3,6 +3,11 @@ package de.kimminich.agile.excercises.excercise6;
 
 public abstract class Hand implements Comparable<Hand> {
 
+    public static final int KNAVE = 11;
+    public static final int QUEEN = 12;
+    public static final int KING = 13;
+    public static final int ACE = 14;
+
     protected int[] cards;
 
     public Hand(int... cards) {

@@ -7,17 +7,13 @@ import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
 import org.junit.Test;
 
+import static de.kimminich.agile.excercises.excercise6.Hand.*;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 
 public class HandUnitTest {
-
-    private static final int KNAVE = 11;
-    private static final int QUEEN = 12;
-    private static final int KING = 13;
-    private static final int ACE = 14;
 
     @Test
     public void shouldDetermineHighCard() {

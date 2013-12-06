@@ -20,7 +20,7 @@ public class HandSampleImpl extends Hand {
         checkImpossibleNumberOfSameCardValue(cardValueTuples);
 
         for (Integer card : cardValueTuples.keySet()) {
-            if (card < 2 || card > 14) {
+            if (card < 2 || card > ACE) {
                 throw new IllegalArgumentException("Illegal card value: " + card);
             }
         }
@@ -125,7 +125,7 @@ public class HandSampleImpl extends Hand {
     }
 
     private boolean isLastCardAceWithFiveAsPredecessor() {
-        return cards[4] == 14 && cards[3] == 5;
+        return cards[4] == ACE && cards[3] == 5;
     }
 
     private CardValueTuples determineOccurencesOfCardValues() {
