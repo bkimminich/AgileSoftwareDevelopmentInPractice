@@ -14,9 +14,10 @@ import static org.junit.Assert.assertThat;
 
 public class HandUnitTest {
 
-    private static Hand aHandWithCards(int... cards) {
-        return new HandSampleImpl(cards);
-    }
+    private static final int KNAVE = 11;
+    private static final int QUEEN = 12;
+    private static final int KING = 13;
+    private static final int ACE = 14;
 
     @Test
     public void shouldDetermineHighCard() {
@@ -55,12 +56,12 @@ public class HandUnitTest {
 
     @Test
     public void shouldDetermineStraightEndingWithAce() {
-        assertThat(aHandWithCards(10, 11, 12, 13, 14), hasCategory(HandCategory.Straight));
+        assertThat(aHandWithCards(10, KNAVE, QUEEN, KING, ACE), hasCategory(HandCategory.Straight));
     }
 
     @Test
     public void shouldDetermineStraightStartingWithAce() {
-        assertThat(aHandWithCards(14, 2, 3, 4, 5), hasCategory(HandCategory.Straight));
+        assertThat(aHandWithCards(ACE, 2, 3, 4, 5), hasCategory(HandCategory.Straight));
     }
 
     @Test(expected = Exception.class)
@@ -74,7 +75,7 @@ public class HandUnitTest {
     }
 
     @Test(expected = Exception.class)
-    public void shouldFailOnTooLittleCards() {
+    public void shouldFailOnNotEnoughCards() {
         aHandWithCards(2, 3, 4, 5);
     }
 
@@ -115,7 +116,11 @@ public class HandUnitTest {
 
     @Test
     public void shouldFourOfAKindWinOverFullHouse() {
-        assertThat(aHandWithCards(2, 2, 2, 2, 3), is(greaterThan(aHandWithCards(13, 13, 14, 14, 14))));
+        assertThat(aHandWithCards(2, 2, 2, 2, 3), is(greaterThan(aHandWithCards(KING, KING, ACE, ACE, ACE))));
+    }
+
+    private static Hand aHandWithCards(int... cards) {
+        return new HandSampleImpl(cards);
     }
 
     private static Matcher<Hand> hasCategory(final HandCategory category) {
