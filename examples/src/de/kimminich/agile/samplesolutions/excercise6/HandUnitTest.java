@@ -60,27 +60,27 @@ public class HandUnitTest {
         assertThat(aHandWithCards(ACE, 2, 3, 4, 5), hasCategory(HandCategory.Straight));
     }
 
-    @Test(expected = Exception.class)
+    @Test(expected = IllegalArgumentException.class)
     public void shouldFailOnImpossibleNumberOfSameCardValue() {
         aHandWithCards(5, 5, 5, 5, 5);
     }
 
-    @Test(expected = Exception.class)
+    @Test(expected = IllegalArgumentException.class)
     public void shouldFailOnTooManyCards() {
         aHandWithCards(2, 3, 4, 5, 6, 7);
     }
 
-    @Test(expected = Exception.class)
+    @Test(expected = IllegalArgumentException.class)
     public void shouldFailOnNotEnoughCards() {
         aHandWithCards(2, 3, 4, 5);
     }
 
-    @Test(expected = Exception.class)
+    @Test(expected = IllegalArgumentException.class)
     public void shouldFailOnTooLowCardDeckValue() {
         aHandWithCards(1, 5, 5, 5, 5);
     }
 
-    @Test(expected = Exception.class)
+    @Test(expected = IllegalArgumentException.class)
     public void shouldFailOnTooHighCardDeckValue() {
         aHandWithCards(15, 2, 2, 2, 2);
     }
