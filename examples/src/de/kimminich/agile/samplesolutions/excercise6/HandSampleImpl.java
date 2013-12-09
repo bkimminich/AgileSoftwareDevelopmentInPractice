@@ -43,22 +43,22 @@ public class HandSampleImpl extends Hand {
 
     @Override
     public HandCategory getHandCategory() {
-        if (checkIfFullHouse()) {
+        if (isFullHouse()) {
             return HandCategory.FullHouse;
         }
-        if (checkIfStraight()) {
+        if (isStraight()) {
             return HandCategory.Straight;
         }
-        if (checkIfFourOfAKind()) {
+        if (isFourOfAKind()) {
             return HandCategory.FourOfAKind;
         }
-        if (checkIfThreeOfAKind()) {
+        if (isThreeOfAKind()) {
             return HandCategory.ThreeOfAKind;
         }
-        if (checkIfTwoPair()) {
+        if (isTwoPair()) {
             return HandCategory.TwoPair;
         }
-        if (checkIfOnePair()) {
+        if (isOnePair()) {
             return HandCategory.OnePair;
         }
         return HandCategory.HighCard;
@@ -69,19 +69,19 @@ public class HandSampleImpl extends Hand {
         return getHandCategory().compareTo(other.getHandCategory());
     }
 
-    private boolean checkIfFullHouse() {
-        return checkIfThreeOfAKind() && checkIfOnePair();
+    private boolean isFullHouse() {
+        return isThreeOfAKind() && isOnePair();
     }
 
-    private boolean checkIfThreeOfAKind() {
+    private boolean isThreeOfAKind() {
         return hasCardValueTupleInGivenCards(3);
     }
 
-    private boolean checkIfOnePair() {
+    private boolean isOnePair() {
         return hasCardValueTupleInGivenCards(2);
     }
 
-    private boolean checkIfFourOfAKind() {
+    private boolean isFourOfAKind() {
         return hasCardValueTupleInGivenCards(4);
     }
 
@@ -94,7 +94,7 @@ public class HandSampleImpl extends Hand {
         return false;
     }
 
-    private boolean checkIfTwoPair() {
+    private boolean isTwoPair() {
         Boolean onePair = null;
         for (Entry<Integer, Integer> group : cardValueTuples.entrySet()) {
             if (onePair == null) {
@@ -110,7 +110,7 @@ public class HandSampleImpl extends Hand {
         return false;
     }
 
-    private boolean checkIfStraight() {
+    private boolean isStraight() {
         Arrays.sort(cards);
         for (int i = 1; i < cards.length; i++) {
             if (!isCardSuccessorOfPreviousCard(i)) {
