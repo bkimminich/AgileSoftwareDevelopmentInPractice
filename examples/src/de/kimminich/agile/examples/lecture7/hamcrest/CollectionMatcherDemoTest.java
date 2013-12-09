@@ -14,7 +14,7 @@ public class CollectionMatcherDemoTest {
 
     @Test
     @Ignore
-    public void shouldntFindNeedleInHaystack() {
+    public void shouldNotFindNeedleInHaystack() {
         // when
         String[] haystack = {"straw", "straw", "straw", "straw"};
         // then

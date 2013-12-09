@@ -20,7 +20,7 @@ public class SimpleMatcherDemoTest {
 
     @Test
     @Ignore
-    public void shouldntKnowAnswerToEverything() {
+    public void shouldNotKnowAnswerToEverything() {
         // when
         int answerToEverything = DeepThought.miscalculate();
         // then
