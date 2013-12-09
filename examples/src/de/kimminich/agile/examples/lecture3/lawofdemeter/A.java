@@ -6,11 +6,11 @@ public class A {
 
     public void a1(C c) {
         D d = new D();
-        a2();                    // ok, own class
-        b.b();                    // ok, associated class
-        c.c();                    // ok, parameter
-        d.d();                    // ok, created object
-        b.getX().x();            // not ok
+        a2();                   // ok, own class
+        b.b();                  // ok, associated class
+        c.c();                  // ok, parameter
+        d.d();                  // ok, created object
+        b.getX().x();           // not ok
         c.getX().getY().y();    // not ok
     }
 

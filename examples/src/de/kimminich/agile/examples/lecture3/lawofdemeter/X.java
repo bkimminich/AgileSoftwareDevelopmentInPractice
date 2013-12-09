@@ -5,7 +5,7 @@ public class X {
     private Y y;
 
     public void x() {
-        y.y();            // ok, associated class
+        y.y();      // ok, associated class
     }
 
     public Y getY() {

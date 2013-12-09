@@ -5,8 +5,8 @@ public class C {
     private X x;
 
     public void c() {
-        x.x();            // ok, associated class
-        x.getY().y();    // not ok
+        x.x();          // ok, associated class
+        x.getY().y();   // not ok
     }
 
     public X getX() {

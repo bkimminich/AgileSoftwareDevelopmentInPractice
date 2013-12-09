@@ -17,13 +17,11 @@ public class Minesweeper {
     }
 
     public class Cell {
-
         private boolean flagged;
 
         public boolean isFlagged() {
             return flagged;
         }
-
     }
 
 }
