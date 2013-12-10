@@ -6,5 +6,5 @@ lectures available on Slideshare: http://www.slideshare.net/BjrnKimminich/agile-
 ## Installation
 
 1. Checkout project and import into IDE of your choice
-2. Add libraries in /examples/lib to classpath
+2. Add libraries in /examples/lib to project classpath
 3. Done!
