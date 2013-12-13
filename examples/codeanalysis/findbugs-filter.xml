@@ -1,0 +1,49 @@
+<FindBugsFilter>
+    <!-- Match any test packages -->
+    <Match>
+        <Package name="~.*\.test"/>
+    </Match>
+
+    <!-- KN configuration starts here -->
+    <Match>
+        <!--
+          certain bugs are not considered to be vital, these are
+
+          Category: Malicious code vulnerability
+          	EI_EXPOSE_REP: Method returning array may expose internal representation
+          	EI_EXPOSE_REP2: Storing reference to mutable object
+
+         -->
+        <Bug pattern="EI_EXPOSE_REP,EI_EXPOSE_REP2"/>
+    </Match>
+
+    <Match>
+        <!--
+          These are not very important, can be included later when there are no other more important topics (i.e.: never)
+
+          Category: Performance
+          	DM_FP_NUMBER_CTOR: Method invokes inefficient Number constructor; use static valueOf instead
+          	DM_NUMBER_CTOR: Method invokes inefficient Number constructor; use static valueOf instead
+            SIC_INNER_SHOULD_BE_STATIC_ANON: Could be refactored into a named static inner class
+          Category: Dodgy
+            CD_CIRCULAR_DEPENDENCY: Test for circular dependencies among classes
+          Category: Internationalization
+            DM_CONVERT_CASE: String.toLower/UpperCase() uses platform default locale; use String.toLower/UpperCase(Locale) instead
+         -->
+        <Bug pattern="DM_NUMBER_CTOR,DM_FP_NUMBER_CTOR,CD_CIRCULAR_DEPENDENCY,SIC_INNER_SHOULD_BE_STATIC_ANON,DM_CONVERT_CASE"/>
+    </Match>
+
+    <Match>
+        <!--
+          These checks are buggy or tend to produce more false positives than find real issues
+
+          Category: Bad Practice
+          	SE_BAD_FIELD: Non-transient non-serializable instance field in serializable class
+          Category: Correctness
+            UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR: Fields not initialized in constructor; prone to false positives for setter based DI or @Before initialization in tests
+
+         -->
+        <Bug pattern="SE_BAD_FIELD,UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR"/>
+    </Match>
+
+</FindBugsFilter>
