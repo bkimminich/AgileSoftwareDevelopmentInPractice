@@ -9,7 +9,6 @@ import java.util.Map.Entry;
 
 public class HandSampleImpl extends Hand {
 
-    protected int[] cards;
     CardValueTuples cardValueTuples;
 
     public HandSampleImpl(int... cards) {
@@ -62,11 +61,6 @@ public class HandSampleImpl extends Hand {
             return HandCategory.OnePair;
         }
         return HandCategory.HighCard;
-    }
-
-    @Override
-    public int compareTo(Hand other) {
-        return getHandCategory().compareTo(other.getHandCategory());
     }
 
     private boolean isFullHouse() {
@@ -140,7 +134,7 @@ public class HandSampleImpl extends Hand {
         return tuples;
     }
 
-    private class CardValueTuples extends HashMap<Integer, Integer> {
+    private static class CardValueTuples extends HashMap<Integer, Integer> {
 
     }
 
