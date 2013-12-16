@@ -7,13 +7,13 @@ import java.util.*;
 
 public class HandSampleImpl extends Hand {
 
-    CardOccurrenceTuples cardOccurrences;
+    CardOccurrences cardOccurrences;
 
     public HandSampleImpl(int... cards) {
         this.cards = cards;
         checkNumberOfCards();
 
-        cardOccurrences = new CardOccurrenceTuples(cards);
+        cardOccurrences = new CardOccurrences(cards);
         checkImpossibleNumberOfSameCardValue();
         checkInvalidCardValues();
     }
@@ -124,31 +124,4 @@ public class HandSampleImpl extends Hand {
         return Arrays.equals(cards, new int[]{2, 3, 4, 5, ACE});
     }
 
-    private static class CardOccurrenceTuples {
-
-        private Map<Integer, Integer> tuples = new HashMap<>();
-
-        private CardOccurrenceTuples(int[] cards) {
-            for (int card : cards) {
-                addCard(card);
-            }
-        }
-
-        private void addCard(int card) {
-            if (tuples.get(card) == null) {
-                tuples.put(card, 1);
-            } else {
-                tuples.put(card, tuples.get(card) + 1);
-            }
-        }
-
-        private Set<Integer> cardTypes() {
-            return tuples.keySet();
-        }
-
-        private Collection<Integer> cardOccurrences() {
-            return tuples.values();
-        }
-
-    }
 }
