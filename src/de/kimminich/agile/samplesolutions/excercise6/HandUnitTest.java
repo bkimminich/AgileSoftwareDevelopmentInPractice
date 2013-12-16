@@ -5,7 +5,9 @@ import de.kimminich.agile.excercises.excercise6.HandCategory;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import static de.kimminich.agile.excercises.excercise6.Hand.*;
 import static org.hamcrest.Matchers.greaterThan;
@@ -14,6 +16,9 @@ import static org.junit.Assert.assertThat;
 
 
 public class HandUnitTest {
+
+    @Rule
+    public ExpectedException exception = ExpectedException.none();
 
     @Test
     public void shouldDetermineHighCard() {
@@ -60,28 +65,38 @@ public class HandUnitTest {
         assertThat(aHandWithCards(ACE, 2, 3, 4, 5), hasCategory(HandCategory.Straight));
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void shouldFailOnImpossibleNumberOfSameCardValue() {
+        exception.expect(IllegalArgumentException.class);
+        exception.expectMessage("Impossible number of same card value.");
         aHandWithCards(5, 5, 5, 5, 5);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void shouldFailOnTooManyCards() {
+        exception.expect(IllegalArgumentException.class);
+        exception.expectMessage("Too many cards: 6");
         aHandWithCards(2, 3, 4, 5, 6, 7);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void shouldFailOnNotEnoughCards() {
+        exception.expect(IllegalArgumentException.class);
+        exception.expectMessage("Not enough cards: 4");
         aHandWithCards(2, 3, 4, 5);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void shouldFailOnTooLowCardDeckValue() {
+        exception.expect(IllegalArgumentException.class);
+        exception.expectMessage("Illegal card value: 1");
         aHandWithCards(1, 5, 5, 5, 5);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void shouldFailOnTooHighCardDeckValue() {
+        exception.expect(IllegalArgumentException.class);
+        exception.expectMessage("Illegal card value: 15");
         aHandWithCards(15, 2, 2, 2, 2);
     }
 
