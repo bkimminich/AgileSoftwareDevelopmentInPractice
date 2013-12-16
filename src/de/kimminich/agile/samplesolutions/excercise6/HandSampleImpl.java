@@ -15,7 +15,7 @@ public class HandSampleImpl extends Hand {
         this.cards = cards;
 
         checkCardsRange();
-        cardValueTuples = determineOccurencesOfCardValues();
+        cardValueTuples = countOccurencesOfCardValues();
         checkImpossibleNumberOfSameCardValue(cardValueTuples);
 
         for (Integer card : cardValueTuples.keySet()) {
@@ -122,7 +122,7 @@ public class HandSampleImpl extends Hand {
         return cards[4] == ACE && cards[3] == 5;
     }
 
-    private CardValueTuples determineOccurencesOfCardValues() {
+    private CardValueTuples countOccurencesOfCardValues() {
         CardValueTuples tuples = new CardValueTuples();
         for (int card : cards) {
             if (tuples.get(card) == null) {
