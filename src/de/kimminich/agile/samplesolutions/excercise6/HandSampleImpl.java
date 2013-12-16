@@ -7,13 +7,13 @@ import java.util.*;
 
 public class HandSampleImpl extends Hand {
 
-    CardOccurenceTuples cardOccurences;
+    CardOccurrenceTuples cardOccurrences;
 
     public HandSampleImpl(int... cards) {
         this.cards = cards;
         checkNumberOfCards();
 
-        cardOccurences = new CardOccurenceTuples(cards);
+        cardOccurrences = new CardOccurrenceTuples(cards);
         checkImpossibleNumberOfSameCardValue();
         checkInvalidCardValues();
     }
@@ -28,13 +28,13 @@ public class HandSampleImpl extends Hand {
     }
 
     private void checkImpossibleNumberOfSameCardValue() {
-        if (cardOccurences.cardOccurences().contains(5)) {
+        if (cardOccurrences.cardOccurrences().contains(5)) {
             throw new IllegalArgumentException("Impossible number of same card value.");
         }
     }
 
     private void checkInvalidCardValues() {
-        for (Integer card : cardOccurences.cardTypes()) {
+        for (Integer card : cardOccurrences.cardTypes()) {
             if (card < 2 || card > ACE) {
                 throw new IllegalArgumentException("Illegal card value: " + card);
             }
@@ -80,9 +80,9 @@ public class HandSampleImpl extends Hand {
         return hasCardNumberOfTimesInHand(4);
     }
 
-    private boolean hasCardNumberOfTimesInHand(int occurences) {
-        for (Integer occurence : cardOccurences.cardOccurences()) {
-            if (occurence == occurences) {
+    private boolean hasCardNumberOfTimesInHand(int occurrences) {
+        for (Integer occurrence : cardOccurrences.cardOccurrences()) {
+            if (occurrence == occurrences) {
                 return true;
             }
         }
@@ -91,14 +91,14 @@ public class HandSampleImpl extends Hand {
 
     private boolean isTwoPair() {
         Boolean onePair = null;
-        for (Integer occurence : cardOccurences.cardOccurences()) {
+        for (Integer occurrence : cardOccurrences.cardOccurrences()) {
             if (onePair == null) {
-                if (occurence == 2) {
+                if (occurrence == 2) {
                     onePair = true;
                     continue;
                 }
             }
-            if (occurence == 2) {
+            if (occurrence == 2) {
                 return true;
             }
         }
@@ -124,11 +124,11 @@ public class HandSampleImpl extends Hand {
         return Arrays.equals(cards, new int[]{2, 3, 4, 5, ACE});
     }
 
-    private static class CardOccurenceTuples {
+    private static class CardOccurrenceTuples {
 
         private Map<Integer, Integer> tuples = new HashMap<>();
 
-        private CardOccurenceTuples(int[] cards) {
+        private CardOccurrenceTuples(int[] cards) {
             for (int card : cards) {
                 addCard(card);
             }
@@ -146,7 +146,7 @@ public class HandSampleImpl extends Hand {
             return tuples.keySet();
         }
 
-        private Collection<Integer> cardOccurences() {
+        private Collection<Integer> cardOccurrences() {
             return tuples.values();
         }
 
