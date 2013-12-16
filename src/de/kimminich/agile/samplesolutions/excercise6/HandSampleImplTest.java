@@ -15,7 +15,7 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 
-public class HandUnitTest {
+public class HandSampleImplTest {
 
     @Rule
     public ExpectedException exception = ExpectedException.none();
