@@ -13,30 +13,45 @@ public class HandSampleImpl extends Hand {
 
     public HandSampleImpl(int... cards) {
         this.cards = cards;
+        checkNumberOfCards();
 
-        checkCardsRange();
         cardValueTuples = countOccurencesOfCardValues();
-        checkImpossibleNumberOfSameCardValue(cardValueTuples);
-
-        for (Integer card : cardValueTuples.keySet()) {
-            if (card < 2 || card > ACE) {
-                throw new IllegalArgumentException("Illegal card value: " + card);
-            }
-        }
+        checkImpossibleNumberOfSameCardValue();
+        checkInvalidCardValues();
     }
 
-    private void checkImpossibleNumberOfSameCardValue(CardValueTuples occurences) {
-        if (occurences.values().contains(5)) {
-            throw new IllegalArgumentException("Impossible number of same card value.");
-        }
-    }
-
-    private void checkCardsRange() {
+    private void checkNumberOfCards() {
         if (cards.length > 5) {
             throw new IllegalArgumentException("Too many cards: " + cards.length);
         }
         if (cards.length < 5) {
             throw new IllegalArgumentException("Not enough cards: " + cards.length);
+        }
+    }
+
+    private CardValueTuples countOccurencesOfCardValues() {
+        CardValueTuples tuples = new CardValueTuples();
+        for (int card : cards) {
+            if (tuples.get(card) == null) {
+                tuples.put(card, 1);
+            } else {
+                tuples.put(card, tuples.get(card) + 1);
+            }
+        }
+        return tuples;
+    }
+
+    private void checkImpossibleNumberOfSameCardValue() {
+        if (cardValueTuples.values().contains(5)) {
+            throw new IllegalArgumentException("Impossible number of same card value.");
+        }
+    }
+
+    private void checkInvalidCardValues() {
+        for (Integer card : cardValueTuples.keySet()) {
+            if (card < 2 || card > ACE) {
+                throw new IllegalArgumentException("Illegal card value: " + card);
+            }
         }
     }
 
@@ -118,24 +133,12 @@ public class HandSampleImpl extends Hand {
         return cards[i] - cards[i - 1] == 1;
     }
 
+
     private boolean isStraightStartingWithAce() {
         return Arrays.equals(cards, new int[]{2, 3, 4, 5, ACE});
-    }
-
-    private CardValueTuples countOccurencesOfCardValues() {
-        CardValueTuples tuples = new CardValueTuples();
-        for (int card : cards) {
-            if (tuples.get(card) == null) {
-                tuples.put(card, 1);
-            } else {
-                tuples.put(card, tuples.get(card) + 1);
-            }
-        }
-        return tuples;
     }
 
     private static class CardValueTuples extends HashMap<Integer, Integer> {
 
     }
-
 }
