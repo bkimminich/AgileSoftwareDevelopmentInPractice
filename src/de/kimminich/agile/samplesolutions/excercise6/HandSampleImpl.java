@@ -3,19 +3,17 @@ package de.kimminich.agile.samplesolutions.excercise6;
 import de.kimminich.agile.excercises.excercise6.Hand;
 import de.kimminich.agile.excercises.excercise6.HandCategory;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map.Entry;
+import java.util.*;
 
 public class HandSampleImpl extends Hand {
 
-    CardValueTuples cardValueTuples;
+    CardOccurenceTuples cardOccurences;
 
     public HandSampleImpl(int... cards) {
         this.cards = cards;
         checkNumberOfCards();
 
-        cardValueTuples = countOccurencesOfCardValues();
+        cardOccurences = new CardOccurenceTuples(cards);
         checkImpossibleNumberOfSameCardValue();
         checkInvalidCardValues();
     }
@@ -29,26 +27,14 @@ public class HandSampleImpl extends Hand {
         }
     }
 
-    private CardValueTuples countOccurencesOfCardValues() {
-        CardValueTuples tuples = new CardValueTuples();
-        for (int card : cards) {
-            if (tuples.get(card) == null) {
-                tuples.put(card, 1);
-            } else {
-                tuples.put(card, tuples.get(card) + 1);
-            }
-        }
-        return tuples;
-    }
-
     private void checkImpossibleNumberOfSameCardValue() {
-        if (cardValueTuples.values().contains(5)) {
+        if (cardOccurences.cardOccurences().contains(5)) {
             throw new IllegalArgumentException("Impossible number of same card value.");
         }
     }
 
     private void checkInvalidCardValues() {
-        for (Integer card : cardValueTuples.keySet()) {
+        for (Integer card : cardOccurences.cardTypes()) {
             if (card < 2 || card > ACE) {
                 throw new IllegalArgumentException("Illegal card value: " + card);
             }
@@ -83,20 +69,20 @@ public class HandSampleImpl extends Hand {
     }
 
     private boolean isThreeOfAKind() {
-        return hasCardValueTupleInGivenCards(3);
+        return hasCardNumberOfTimesInHand(3);
     }
 
     private boolean isOnePair() {
-        return hasCardValueTupleInGivenCards(2);
+        return hasCardNumberOfTimesInHand(2);
     }
 
     private boolean isFourOfAKind() {
-        return hasCardValueTupleInGivenCards(4);
+        return hasCardNumberOfTimesInHand(4);
     }
 
-    private boolean hasCardValueTupleInGivenCards(int tupleSize) {
-        for (Entry<Integer, Integer> group : cardValueTuples.entrySet()) {
-            if (group.getValue() == tupleSize) {
+    private boolean hasCardNumberOfTimesInHand(int occurences) {
+        for (Integer occurence : cardOccurences.cardOccurences()) {
+            if (occurence == occurences) {
                 return true;
             }
         }
@@ -105,14 +91,14 @@ public class HandSampleImpl extends Hand {
 
     private boolean isTwoPair() {
         Boolean onePair = null;
-        for (Entry<Integer, Integer> group : cardValueTuples.entrySet()) {
+        for (Integer occurence : cardOccurences.cardOccurences()) {
             if (onePair == null) {
-                if (group.getValue() == 2) {
+                if (occurence == 2) {
                     onePair = true;
                     continue;
                 }
             }
-            if (group.getValue() == 2) {
+            if (occurence == 2) {
                 return true;
             }
         }
@@ -138,7 +124,31 @@ public class HandSampleImpl extends Hand {
         return Arrays.equals(cards, new int[]{2, 3, 4, 5, ACE});
     }
 
-    private static class CardValueTuples extends HashMap<Integer, Integer> {
+    private static class CardOccurenceTuples {
+
+        private Map<Integer, Integer> tuples = new HashMap<>();
+
+        private CardOccurenceTuples(int[] cards) {
+            for (int card : cards) {
+                addCard(card);
+            }
+        }
+
+        private void addCard(int card) {
+            if (tuples.get(card) == null) {
+                tuples.put(card, 1);
+            } else {
+                tuples.put(card, tuples.get(card) + 1);
+            }
+        }
+
+        private Set<Integer> cardTypes() {
+            return tuples.keySet();
+        }
+
+        private Collection<Integer> cardOccurences() {
+            return tuples.values();
+        }
 
     }
 }
