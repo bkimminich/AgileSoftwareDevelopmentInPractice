@@ -108,7 +108,7 @@ public class HandSampleImpl extends Hand {
         Arrays.sort(cards);
         for (int i = 1; i < cards.length; i++) {
             if (!isCardSuccessorOfPreviousCard(i)) {
-                return (i == 4 ? isLastCardAceWithFiveAsPredecessor() : false);
+                return isStraightStartingWithAce();
             }
         }
         return true;
@@ -118,8 +118,8 @@ public class HandSampleImpl extends Hand {
         return cards[i] - cards[i - 1] == 1;
     }
 
-    private boolean isLastCardAceWithFiveAsPredecessor() {
-        return cards[4] == ACE && cards[3] == 5;
+    private boolean isStraightStartingWithAce() {
+        return Arrays.equals(cards, new int[]{2, 3, 4, 5, ACE});
     }
 
     private CardValueTuples countOccurencesOfCardValues() {
