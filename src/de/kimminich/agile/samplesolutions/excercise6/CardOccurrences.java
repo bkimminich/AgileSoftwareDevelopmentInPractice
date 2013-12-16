@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-class CardOccurrences {
+public class CardOccurrences {
 
     private Map<Integer, Integer> tuples = new HashMap<>();
 
