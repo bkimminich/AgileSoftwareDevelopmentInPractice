@@ -15,7 +15,7 @@ class CardOccurrences {
         }
     }
 
-    public void addCard(int card) {
+    private void addCard(int card) {
         if (tuples.get(card) == null) {
             tuples.put(card, 1);
         } else {
