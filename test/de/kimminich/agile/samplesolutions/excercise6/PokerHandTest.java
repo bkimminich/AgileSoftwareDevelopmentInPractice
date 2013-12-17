@@ -5,17 +5,14 @@ import de.kimminich.agile.excercises.excercise6.HandCategory;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 import static de.kimminich.agile.excercises.excercise6.Hand.*;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
-
-public class HandSampleImplTest {
+public class PokerHandTest {
 
     @Test
     public void shouldDetermineHighCard() {
@@ -118,7 +115,7 @@ public class HandSampleImplTest {
     }
 
     private static Hand aHandWithCards(int... cards) {
-        return new HandSampleImpl(cards);
+        return new PokerHand(cards);
     }
 
     private static Matcher<Hand> hasCategory(final HandCategory category) {

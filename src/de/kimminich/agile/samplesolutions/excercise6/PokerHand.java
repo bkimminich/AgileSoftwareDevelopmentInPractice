@@ -5,11 +5,11 @@ import de.kimminich.agile.excercises.excercise6.HandCategory;
 
 import java.util.*;
 
-public class HandSampleImpl extends Hand {
+public class PokerHand extends Hand {
 
     CardOccurrences cardOccurrences;
 
-    public HandSampleImpl(int... cards) {
+    public PokerHand(int... cards) {
         this.cards = cards;
         PokerHandValidator.validate(cards);
         cardOccurrences = new CardOccurrences(cards);
