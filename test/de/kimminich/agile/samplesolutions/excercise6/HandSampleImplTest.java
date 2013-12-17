@@ -17,9 +17,6 @@ import static org.junit.Assert.assertThat;
 
 public class HandSampleImplTest {
 
-    @Rule
-    public ExpectedException exception = ExpectedException.none();
-
     @Test
     public void shouldDetermineHighCard() {
         assertThat(aHandWithCards(2, 3, 4, 5, 7), hasCategory(HandCategory.HighCard));
@@ -65,38 +62,28 @@ public class HandSampleImplTest {
         assertThat(aHandWithCards(ACE, 2, 3, 4, 5), hasCategory(HandCategory.Straight));
     }
 
-    @Test
+    @Test(expected = Exception.class)
     public void shouldFailOnImpossibleNumberOfSameCardValue() {
-        exception.expect(IllegalArgumentException.class);
-        exception.expectMessage("Impossible number of same card value.");
         aHandWithCards(5, 5, 5, 5, 5);
     }
 
-    @Test
+    @Test(expected = Exception.class)
     public void shouldFailOnTooManyCards() {
-        exception.expect(IllegalArgumentException.class);
-        exception.expectMessage("Too many cards: 6");
         aHandWithCards(2, 3, 4, 5, 6, 7);
     }
 
-    @Test
+    @Test(expected = Exception.class)
     public void shouldFailOnNotEnoughCards() {
-        exception.expect(IllegalArgumentException.class);
-        exception.expectMessage("Not enough cards: 4");
         aHandWithCards(2, 3, 4, 5);
     }
 
-    @Test
+    @Test(expected = Exception.class)
     public void shouldFailOnTooLowCardDeckValue() {
-        exception.expect(IllegalArgumentException.class);
-        exception.expectMessage("Illegal card value: 1");
         aHandWithCards(1, 5, 5, 5, 5);
     }
 
-    @Test
+    @Test(expected = Exception.class)
     public void shouldFailOnTooHighCardDeckValue() {
-        exception.expect(IllegalArgumentException.class);
-        exception.expectMessage("Illegal card value: 15");
         aHandWithCards(15, 2, 2, 2, 2);
     }
 

@@ -11,34 +11,8 @@ public class HandSampleImpl extends Hand {
 
     public HandSampleImpl(int... cards) {
         this.cards = cards;
-        checkNumberOfCards();
-
+        PokerHandValidator.validate(cards);
         cardOccurrences = new CardOccurrences(cards);
-        checkImpossibleNumberOfSameCardValue();
-        checkInvalidCardValues();
-    }
-
-    private void checkNumberOfCards() {
-        if (cards.length > 5) {
-            throw new IllegalArgumentException("Too many cards: " + cards.length);
-        }
-        if (cards.length < 5) {
-            throw new IllegalArgumentException("Not enough cards: " + cards.length);
-        }
-    }
-
-    private void checkImpossibleNumberOfSameCardValue() {
-        if (cardOccurrences.cardOccurrences().contains(5)) {
-            throw new IllegalArgumentException("Impossible number of same card value.");
-        }
-    }
-
-    private void checkInvalidCardValues() {
-        for (Integer card : cardOccurrences.cardTypes()) {
-            if (card < 2 || card > ACE) {
-                throw new IllegalArgumentException("Illegal card value: " + card);
-            }
-        }
     }
 
     @Override
