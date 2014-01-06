@@ -12,10 +12,9 @@ lectures available on Slideshare: http://www.slideshare.net/BjrnKimminich/agile-
 
 ## How is this project organized?
 
-* ```de.kimminich.agile```
-** ```.demos``` source code required for the live demonstrations
-** ```.examples``` source code snippets and examples as presented on the lecture slides
-** ```.exercises``` source code required for doing the exercises
-** ```.solutions``` sample solutions for the demos and exercises[1]
+* ```de.kimminich.agile.demos``` source code required for the live demonstrations
+* ```de.kimminich.agile.examples``` source code snippets and examples as presented on the lecture slides
+* ```de.kimminich.agile.exercises``` source code required for doing the exercises
+* ```de.kimminich.agile.solutions``` sample solutions for the demos and exercises[1]
 
 [1]: The sample solutions are in no way considered perfect. They are not even the only valid solution for an exercise. Please feel free to submit proposals for new or improving any existing sample solution as a pull request!
