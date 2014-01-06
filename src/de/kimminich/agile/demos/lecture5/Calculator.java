@@ -25,7 +25,7 @@ public class Calculator {
     }
 
     public static int max(int a, int b) {
-        return Math.max(a, Math.abs(b)); // Intentional bug in the implementation
+        return Math.max(a, Math.abs(b)); // Intentional bug in the implementation that is *missed* by the sample solution unit test!
     }
 
 }

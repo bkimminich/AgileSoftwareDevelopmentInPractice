@@ -1,4 +1,4 @@
-package de.kimminich.agile.demos.lecture5;
+package de.kimminich.agile.examples.lecture5;
 
 import org.junit.*;
 

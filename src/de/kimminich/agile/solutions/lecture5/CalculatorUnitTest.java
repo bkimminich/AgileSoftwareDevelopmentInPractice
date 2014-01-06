@@ -1,5 +1,7 @@
-package de.kimminich.agile.demos.lecture5;
+package de.kimminich.agile.solutions.lecture5;
 
+import de.kimminich.agile.demos.lecture5.Calculator;
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -8,7 +10,7 @@ public class CalculatorUnitTest {
 
     @Test
     public void testSum() {
-        assertEquals(0, Calculator.sum(0, 0));
+        Assert.assertEquals(0, Calculator.sum(0, 0));
         assertEquals(1, Calculator.sum(0, 1));
     }
 
