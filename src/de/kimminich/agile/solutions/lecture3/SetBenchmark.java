@@ -1,4 +1,4 @@
-package de.kimminich.agile.samplesolutions.lecture3;
+package de.kimminich.agile.solutions.lecture3;
 
 import java.util.Set;
 

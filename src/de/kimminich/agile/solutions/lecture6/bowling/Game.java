@@ -1,4 +1,4 @@
-package de.kimminich.agile.samplesolutions.lecture6.bowling;
+package de.kimminich.agile.solutions.lecture6.bowling;
 
 public class Game {
 

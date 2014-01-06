@@ -1,4 +1,4 @@
-package de.kimminich.agile.samplesolutions.excercise6;
+package de.kimminich.agile.solutions.lecture6.poker;
 
 import org.junit.Rule;
 import org.junit.Test;

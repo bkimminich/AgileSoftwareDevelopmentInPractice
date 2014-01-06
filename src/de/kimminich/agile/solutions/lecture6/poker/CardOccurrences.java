@@ -1,4 +1,4 @@
-package de.kimminich.agile.samplesolutions.lecture6.poker;
+package de.kimminich.agile.solutions.lecture6.poker;
 
 import java.util.Collection;
 import java.util.HashMap;

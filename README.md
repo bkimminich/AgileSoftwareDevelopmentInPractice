@@ -13,8 +13,9 @@ lectures available on Slideshare: http://www.slideshare.net/BjrnKimminich/agile-
 ## How is this project organized?
 
 * ```de.kimminich.agile```
-** ```.examples``` contains all source code examples from the presentation slides (packaged by lectures)
-** ```.exercises``` contains source code required for doing the demos or exercises (packaged by lectures)
-** ```.samplesolutions``` contains sample solutions for the exercises. The sample solutions are in no way considered perfect, nor are they the only valid solution for an exercise (packaged by lectures)
+** ```.demos``` source code required for the live demonstrations
+** ```.examples``` source code snippets and examples as presented on the lecture slides
+** ```.exercises``` source code required for doing the exercises
+** ```.solutions``` sample solutions for the demos and exercises[1]
 
-Source code and test code are put separated into the ```src``` and ```test``` folders. Both have the same package structure described above.
+[1]: The sample solutions are in no way considered perfect. They are not even the only valid solution for an exercise. Please feel free to submit proposals for new or improving any existing sample solution as a pull request!

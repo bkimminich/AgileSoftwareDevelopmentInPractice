@@ -1,13 +1,13 @@
-package de.kimminich.agile.samplesolutions.excercise6;
+package de.kimminich.agile.solutions.lecture6.poker;
 
-import de.kimminich.agile.excercises.excercise6.Hand;
-import de.kimminich.agile.excercises.excercise6.HandCategory;
+import de.kimminich.agile.excercises.lecture6.poker.Hand;
+import de.kimminich.agile.excercises.lecture6.poker.HandCategory;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
 import org.junit.Test;
 
-import static de.kimminich.agile.excercises.excercise6.Hand.*;
+import static de.kimminich.agile.excercises.lecture6.poker.Hand.*;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;

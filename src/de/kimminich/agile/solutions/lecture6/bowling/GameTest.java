@@ -1,6 +1,5 @@
-package de.kimminich.agile.samplesolutions.lecture6.bowling;
+package de.kimminich.agile.solutions.lecture6.bowling;
 
-import de.kimminich.agile.samplesolutions.lecture6.bowling.Game;
 import org.junit.Before;
 import org.junit.Test;
 
