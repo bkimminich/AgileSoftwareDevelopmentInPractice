@@ -6,7 +6,7 @@ lectures available on Slideshare: http://www.slideshare.net/BjrnKimminich/agile-
 ## Installation
 
 1. Checkout project and import into IDE of your choice
-2. Declare the ```src``` and ```test``` folder as source folders of the IDE project
+2. Declare the ```src``` folder as source folders of the IDE project
 3. Add all libraries in ```/examples/lib``` and its subfolders to the IDE project's classpath
 4. Done!
 
