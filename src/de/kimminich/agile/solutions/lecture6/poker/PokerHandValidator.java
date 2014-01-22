@@ -1,6 +1,6 @@
 package de.kimminich.agile.solutions.lecture6.poker;
 
-import static de.kimminich.agile.excercises.lecture6.poker.Hand.ACE;
+import static de.kimminich.agile.exercises.lecture6.poker.Hand.ACE;
 
 public class PokerHandValidator {
 

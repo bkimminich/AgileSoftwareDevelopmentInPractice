@@ -1,7 +1,7 @@
 package de.kimminich.agile.solutions.lecture6.poker;
 
-import de.kimminich.agile.excercises.lecture6.poker.Hand;
-import de.kimminich.agile.excercises.lecture6.poker.HandCategory;
+import de.kimminich.agile.exercises.lecture6.poker.Hand;
+import de.kimminich.agile.exercises.lecture6.poker.HandCategory;
 
 import java.util.*;
 
