@@ -12,18 +12,16 @@ public class SimpleMatcherDemoTest {
 
     @Test
     public void shouldKnowAnswerToEverything() {
-        // when
         int answerToEverything = DeepThought.calculate();
-        // then
+
         assertThat(answerToEverything, is(equalTo(42)));
     }
 
     @Test
     @Ignore
     public void shouldNotKnowAnswerToEverything() {
-        // when
         int answerToEverything = DeepThought.miscalculate();
-        // then
+
         assertEquals(42, answerToEverything);
     }
 

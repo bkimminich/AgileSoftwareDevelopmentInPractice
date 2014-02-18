@@ -15,9 +15,8 @@ public class CollectionMatcherDemoTest {
     @Test
     @Ignore
     public void shouldNotFindNeedleInHaystack() {
-        // when
         String[] haystack = {"straw", "straw", "straw", "straw"};
-        // then
+
         boolean found = false;
         for (String straw : haystack) {
             if (straw.equals("needle")) {
@@ -29,11 +28,9 @@ public class CollectionMatcherDemoTest {
 
     @Test
     public void shouldFindNeedleInHaystack() {
-        // when
         List<String> haystack = Arrays.asList("straw", "straw", "straw", "needle");
-        // then
-        assertThat(haystack, hasItem("needle"));
 
+        assertThat(haystack, hasItem("needle"));
     }
 
 }
