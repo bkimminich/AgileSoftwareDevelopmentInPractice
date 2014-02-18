@@ -2,8 +2,8 @@ package de.kimminich.agile.solutions.lecture6.poker;
 
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.hamcrest.MatcherAssert.*;
+import static org.hamcrest.CoreMatchers.hasItems;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class CardOccurrencesTest {
 
@@ -11,26 +11,26 @@ public class CardOccurrencesTest {
 
     @Test
     public void shouldRetrieveCorrectCardTypes() {
-        cardOccurrences = new CardOccurrences(new int[]{2,2,2,2,2});
+        cardOccurrences = new CardOccurrences(new int[]{2, 2, 2, 2, 2});
         assertThat(cardOccurrences.cardTypes(), hasItems(2));
 
-        cardOccurrences = new CardOccurrences(new int[]{2,2,2,3,4});
+        cardOccurrences = new CardOccurrences(new int[]{2, 2, 2, 3, 4});
         assertThat(cardOccurrences.cardTypes(), hasItems(2, 3, 4));
 
-        cardOccurrences = new CardOccurrences(new int[]{2,3,4,5,6});
+        cardOccurrences = new CardOccurrences(new int[]{2, 3, 4, 5, 6});
         assertThat(cardOccurrences.cardTypes(), hasItems(2, 3, 4, 5, 6));
     }
 
     @Test
     public void shouldRetrieveCorrectCardOccurrences() {
-        cardOccurrences = new CardOccurrences(new int[]{2,2,2,2,2});
+        cardOccurrences = new CardOccurrences(new int[]{2, 2, 2, 2, 2});
         assertThat(cardOccurrences.cardOccurrences(), hasItems(5));
 
-        cardOccurrences = new CardOccurrences(new int[]{2,2,2,3,4});
-        assertThat(cardOccurrences.cardOccurrences(), hasItems(3,1,1));
+        cardOccurrences = new CardOccurrences(new int[]{2, 2, 2, 3, 4});
+        assertThat(cardOccurrences.cardOccurrences(), hasItems(3, 1, 1));
 
-        cardOccurrences = new CardOccurrences(new int[]{2,3,4,5,6});
-        assertThat(cardOccurrences.cardOccurrences(), hasItems(1,1,1,1,1));
+        cardOccurrences = new CardOccurrences(new int[]{2, 3, 4, 5, 6});
+        assertThat(cardOccurrences.cardOccurrences(), hasItems(1, 1, 1, 1, 1));
     }
 
 }
