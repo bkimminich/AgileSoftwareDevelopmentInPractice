@@ -1,6 +1,5 @@
 package de.kimminich.agile.examples.lecture7.hamcrest;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -9,7 +8,6 @@ import java.util.List;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasItem;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
 public class CollectionMatcherDemoTest {
 
