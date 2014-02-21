@@ -8,12 +8,12 @@ import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasItem;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class CollectionMatcherDemoTest {
 
     @Test
-    @Ignore
     public void shouldNotFindNeedleInHaystack() {
         String[] haystack = {"straw", "straw", "straw", "straw"};
 
@@ -23,7 +23,7 @@ public class CollectionMatcherDemoTest {
                 found = true;
             }
         }
-        assertTrue(found);
+        assertFalse(found);
     }
 
     @Test
