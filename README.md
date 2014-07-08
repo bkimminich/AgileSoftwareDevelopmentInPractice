@@ -18,3 +18,5 @@ lectures available on Slideshare: http://www.slideshare.net/BjrnKimminich/agile-
 * ```de.kimminich.agile.solutions``` sample solutions for the demos and exercises[1]
 
 [1]: The sample solutions are in no way considered perfect. They are not even the only valid solution for an exercise. Please feel free to submit proposals for new or improving any existing sample solution as a pull request!
+
+[![endorse](https://api.coderwall.com/bkimminich/endorsecount.png)](https://coderwall.com/bkimminich)
