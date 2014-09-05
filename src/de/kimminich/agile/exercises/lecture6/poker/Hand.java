@@ -1,6 +1,9 @@
 package de.kimminich.agile.exercises.lecture6.poker;
 
-
+/**
+ * @deprecated Poker exercise has been removed from training!
+ */
+@Deprecated
 public abstract class Hand implements Comparable<Hand> {
 
     public static final int KNAVE = 11;
