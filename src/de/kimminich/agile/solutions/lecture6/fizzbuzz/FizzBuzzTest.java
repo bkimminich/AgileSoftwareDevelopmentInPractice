@@ -26,32 +26,44 @@ public class FizzBuzzTest {
 
     @Test
     public void testDividableByThreeIsPrintedAsFizz() {
-        assertEquals("Fizz", fb.process(3));
-        assertEquals("Fizz", fb.process(9));
-        assertEquals("Fizz", fb.process(12));
-        assertEquals("Fizz", fb.process(18));
-        assertEquals("Fizz", fb.process(21));
-        assertEquals("Fizz", fb.process(99));
+        assertFizz(fb.process(3));
+        assertFizz(fb.process(9));
+        assertFizz(fb.process(12));
+        assertFizz(fb.process(18));
+        assertFizz(fb.process(21));
+        assertFizz(fb.process(99));
     }
 
     @Test
     public void testDividableByFiveIsPrintedAsBuzz() {
-        assertEquals("Buzz", fb.process(5));
-        assertEquals("Buzz", fb.process(10));
-        assertEquals("Buzz", fb.process(20));
-        assertEquals("Buzz", fb.process(25));
-        assertEquals("Buzz", fb.process(35));
-        assertEquals("Buzz", fb.process(100));
+        assertBuzz(fb.process(5));
+        assertBuzz(fb.process(10));
+        assertBuzz(fb.process(20));
+        assertBuzz(fb.process(25));
+        assertBuzz(fb.process(35));
+        assertBuzz(fb.process(100));
     }
 
     @Test
     public void testDividableByThreeAndFiveIsPrintedAsFizzBuzz() {
-        assertEquals("FizzBuzz", fb.process(15));
-        assertEquals("FizzBuzz", fb.process(30));
-        assertEquals("FizzBuzz", fb.process(45));
-        assertEquals("FizzBuzz", fb.process(60));
-        assertEquals("FizzBuzz", fb.process(75));
-        assertEquals("FizzBuzz", fb.process(90));
+        assertFizzBuzz(fb.process(15));
+        assertFizzBuzz(fb.process(30));
+        assertFizzBuzz(fb.process(45));
+        assertFizzBuzz(fb.process(60));
+        assertFizzBuzz(fb.process(75));
+        assertFizzBuzz(fb.process(90));
+    }
+
+    private void assertFizz(String actual) {
+        assertEquals("Fizz", actual);
+    }
+
+    private void assertBuzz(String actual) {
+        assertEquals("Buzz", actual);
+    }
+
+    private void assertFizzBuzz(String actual) {
+        assertEquals("FizzBuzz", actual);
     }
 
 }
