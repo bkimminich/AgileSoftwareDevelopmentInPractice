@@ -6,11 +6,11 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class Test {
 
     public static void main(String... args) {
-        new Test().exec(new ArrayList<>(), 1000, 10000);
-        new Test().exec(new HashSet<>(), 1000, 10000);
-        new Test().exec(new TreeSet<>(), 1000, 10000);
-        new Test().exec(new LinkedList<>(), 1000, 10000);
-        new Test().exec(new LinkedBlockingQueue<>(), 1000, 10000);
+        new Test().exec(new ArrayList<String>(), 1000, 10000);
+        new Test().exec(new HashSet<String>(), 1000, 10000);
+        new Test().exec(new TreeSet<String>(), 1000, 10000);
+        new Test().exec(new LinkedList<String>(), 1000, 10000);
+        new Test().exec(new LinkedBlockingQueue<String>(), 1000, 10000);
     }
 
     public void exec(ArrayList<String> q, int len, int ops) {
