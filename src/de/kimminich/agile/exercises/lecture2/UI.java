@@ -22,4 +22,8 @@ public class UI {
         return null;
     }
 
+    public static void getMessage(String s) {
+        JOptionPane.showMessageDialog(null, s);
+    }
+
 }
