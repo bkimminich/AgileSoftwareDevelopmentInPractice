@@ -12,7 +12,7 @@ import java.util.List;
  *
  * Created by bjoern.kimminich on 26.02.2016.
  */
-public interface CardChooserStrategy {
+public interface ICardChooserStrategy {
 
     /**
      * This methods chooses the best card to play next in a given
