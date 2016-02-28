@@ -20,7 +20,7 @@ public interface ICardChooserStrategy {
      *
      * @param myMana the player's currently available mana
      * @param myCards the player's cards in hand
-     * @return the best card to play next
+     * @return the best card to play next or <code>null</code> when no card can be played
      */
     Card nextCardToPlay(Player player, Player opponent);
 
