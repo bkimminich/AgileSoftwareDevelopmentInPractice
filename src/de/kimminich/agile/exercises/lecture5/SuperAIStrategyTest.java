@@ -14,7 +14,7 @@ public class SuperAIStrategyTest {
 
     /**
      * Explanation: Following the "small cards first" strategy (see {@link SmartAIStrategyTest} the player would
-     * play the cards 1, 2 and 4 when at 7 mana with the given hand. But doing so would waste 1 damage in the subsequent
+     * play the cards 1, 2 and 4 when at 7 mana with the given hand. But doing so would waste 2 damage in the subsequent
      * turn at 8 mana, because he would only have the cards 3 and 6 (the card he draws that turn is ignored here). So it
      * would be smarter to play 3 and 4 instead and save 6 and 2 for the next turn.
      **/
