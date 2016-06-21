@@ -20,4 +20,3 @@ lectures available on Slideshare: http://www.slideshare.net/BjrnKimminich/agile-
 [1]: The sample solutions are in no way considered perfect. They are not even the only valid solution for an exercise. Please feel free to submit proposals for new or improving any existing sample solution as a pull request!
 
 [![Build Status](https://travis-ci.org/bkimminich/AgileSoftwareDevelopmentInPractice.svg)](https://travis-ci.org/bkimminich/AgileSoftwareDevelopmentInPractice)
-[![endorse](https://api.coderwall.com/bkimminich/endorsecount.png)](https://coderwall.com/bkimminich)
