@@ -14,11 +14,3 @@ repositories {
 dependencies {
     compile fileTree(dir: 'lib', include: '**/*.jar')
 }
-
-sourceSets {
-    main {
-        java {
-            srcDir 'src'
-        }
-    }
-}
