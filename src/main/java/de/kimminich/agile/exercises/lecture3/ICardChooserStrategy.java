@@ -1,6 +1,5 @@
 package de.kimminich.agile.exercises.lecture3;
 
-import de.kimminich.agile.exercises.lecture2.Card;
 import de.kimminich.agile.exercises.lecture2.Player;
 
 import java.util.List;
@@ -22,6 +21,6 @@ public interface ICardChooserStrategy {
      * @param myCards the player's cards in hand
      * @return the best card to play next or <code>null</code> when no card can be played
      */
-    Card nextCardToPlay(Player player, Player opponent);
+    Integer nextCardToPlay(Player player, Player opponent);
 
 }

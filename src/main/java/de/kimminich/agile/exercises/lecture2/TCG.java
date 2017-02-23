@@ -21,8 +21,8 @@ public class TCG {
         // Game loop
         while (p1.getLife() > 0 && p2.getLife() > 0) {
             // int card = UI.getInput(p.getCards());
-            Card card = new Card(-1); // FIXME Dummy card for now!
-            p.setMana(p.getMana() - card.getValue());
+            int card = 0; // FIXME Dummy card for now!
+            p.setMana(p.getMana() - card);
             // TODO Reduce other players health
             // p2.setLife(p.getLife() - card);
             // Switch turn

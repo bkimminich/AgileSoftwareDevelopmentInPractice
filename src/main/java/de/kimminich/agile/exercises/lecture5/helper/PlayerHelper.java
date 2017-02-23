@@ -1,21 +1,17 @@
 package de.kimminich.agile.exercises.lecture5.helper;
 
-import de.kimminich.agile.exercises.lecture2.Card;
 import de.kimminich.agile.exercises.lecture2.Player;
-
-import java.util.Collections;
 
 public class PlayerHelper {
 
     public static void putCardsInHandOf(Player player, int... cards) {
-        for (int c : cards) {
-            Card card = new Card(c);
+        for (int i = 0; i < cards.length; i++) {
             // player.addCard(card); // TODO
         }
     }
 
-    public static void simulatePlayingCard(Player player, Card cardToPlay) {
-        player.setMana(player.getMana() - cardToPlay.getValue());
+    public static void simulatePlayingCard(Player player, Integer cardToPlay) {
+        player.setMana(player.getMana() - cardToPlay);
         // player.removeCard(card); // TODO
     }
 

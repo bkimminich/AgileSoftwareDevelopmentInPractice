@@ -1,6 +1,5 @@
 package de.kimminich.agile.exercises.lecture5;
 
-import de.kimminich.agile.exercises.lecture2.Card;
 import de.kimminich.agile.exercises.lecture2.Player;
 import de.kimminich.agile.exercises.lecture3.ICardChooserStrategy;
 import org.junit.Test;
@@ -19,7 +18,7 @@ public class SmartAIStrategyTest {
 
         Player opponent = new Player();
 
-        Card cardToPlay;
+        Integer cardToPlay;
         while ((cardToPlay = strategy.nextCardToPlay(player, opponent)) != null) {
             simulatePlayingCard(player, cardToPlay);
         }
@@ -35,7 +34,7 @@ public class SmartAIStrategyTest {
 
         Player opponent = new Player();
 
-        Card cardToPlay;
+        Integer cardToPlay;
         while ((cardToPlay = strategy.nextCardToPlay(player, opponent)) != null) {
             simulatePlayingCard(player, cardToPlay);
         }
