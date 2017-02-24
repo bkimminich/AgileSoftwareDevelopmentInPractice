@@ -9,7 +9,7 @@ public class UI {
     public static Integer selectCardFrom(List<Integer> cards) {
         String input;
         while ((input = JOptionPane.showInputDialog("Choose a card to play: " + cards)) != null) {
-            if (input.matches("[0-8]")) {
+            if (input.matches("[1-8]")) {
                 Integer card = Integer.valueOf(input);
                 if (cards.contains(card)) {
                     return card;
