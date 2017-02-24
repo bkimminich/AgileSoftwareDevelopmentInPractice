@@ -68,11 +68,13 @@ public class TCG {
 
     private void prepareTurn() {
         if (player.getDeck().size() == 0) { // bleedout rule
+            UI.showMessage(player.getName() + "'s deck is empty! Bleeding out!");
             player.setHealth(player.getHealth() - 1);
         } else {
             player.drawNumberOfCards(1);
             if (player.getHand().size() == 6) {
-                player.getHand().remove(5); // overload rule
+                // overload rule
+                UI.showMessage(player.getName() + "'s hand is full! Lost drawn card " + player.getHand().remove(5));
             }
         }
         player.setMaxMana(Math.min(10, player.getMaxMana() + 1));
