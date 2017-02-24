@@ -1,8 +1,6 @@
-package de.kimminich.agile.exercises.lecture3;
+package de.kimminich.agile.exercises.lecture3.tcg;
 
-import de.kimminich.agile.exercises.lecture2.Player;
-
-import java.util.List;
+import de.kimminich.agile.exercises.lecture2.tcg.Player;
 
 /**
  * Implementations of this interface can use different strategies to

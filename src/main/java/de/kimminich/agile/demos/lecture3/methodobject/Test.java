@@ -1,4 +1,4 @@
-package de.kimminich.agile.demos.lecture3;
+package de.kimminich.agile.demos.lecture3.methodobject;
 
 import java.util.*;
 import java.util.concurrent.LinkedBlockingQueue;

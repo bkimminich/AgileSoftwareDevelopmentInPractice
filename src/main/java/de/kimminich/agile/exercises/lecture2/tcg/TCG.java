@@ -1,6 +1,4 @@
-package de.kimminich.agile.exercises.lecture2;
-
-import javax.swing.*;
+package de.kimminich.agile.exercises.lecture2.tcg;
 
 /**
  * Created by bjoern.kimminich on 26.02.2016.

@@ -1,10 +1,10 @@
-package de.kimminich.agile.exercises.lecture5;
+package de.kimminich.agile.exercises.lecture5.tcg;
 
-import de.kimminich.agile.exercises.lecture2.Player;
-import de.kimminich.agile.exercises.lecture3.ICardChooserStrategy;
+import de.kimminich.agile.exercises.lecture2.tcg.Player;
+import de.kimminich.agile.exercises.lecture3.tcg.ICardChooserStrategy;
 import org.junit.Test;
 
-import static de.kimminich.agile.exercises.lecture5.helper.PlayerHelper.*;
+import static de.kimminich.agile.exercises.lecture5.tcg.helper.PlayerHelper.*;
 import static org.junit.Assert.assertEquals;
 
 public class SmartAIStrategyTest {

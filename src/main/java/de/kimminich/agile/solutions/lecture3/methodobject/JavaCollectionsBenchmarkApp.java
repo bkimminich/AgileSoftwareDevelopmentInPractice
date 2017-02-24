@@ -1,4 +1,4 @@
-package de.kimminich.agile.solutions.lecture3;
+package de.kimminich.agile.solutions.lecture3.methodobject;
 
 import java.util.ArrayList;
 import java.util.HashSet;

@@ -1,6 +1,6 @@
-package de.kimminich.agile.exercises.lecture5.helper;
+package de.kimminich.agile.exercises.lecture5.tcg.helper;
 
-import de.kimminich.agile.exercises.lecture2.Player;
+import de.kimminich.agile.exercises.lecture2.tcg.Player;
 
 public class PlayerHelper {
 

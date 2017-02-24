@@ -1,4 +1,4 @@
-package de.kimminich.agile.exercises.lecture2;
+package de.kimminich.agile.exercises.lecture2.tcg;
 
 public class Player {
 
