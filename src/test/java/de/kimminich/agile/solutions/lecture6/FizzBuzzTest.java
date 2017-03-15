@@ -1,5 +1,6 @@
-package de.kimminich.agile.solutions.lecture6.fizzbuzz;
+package de.kimminich.agile.solutions.lecture6;
 
+import de.kimminich.agile.solutions.lecture6.FizzBuzz;
 import org.junit.Before;
 import org.junit.Test;
 

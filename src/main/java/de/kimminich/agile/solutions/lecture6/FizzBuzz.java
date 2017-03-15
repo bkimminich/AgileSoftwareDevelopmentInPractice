@@ -1,4 +1,4 @@
-package de.kimminich.agile.solutions.lecture6.fizzbuzz;
+package de.kimminich.agile.solutions.lecture6;
 
 public class FizzBuzz {
 
